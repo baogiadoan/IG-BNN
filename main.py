@@ -447,8 +447,6 @@ def train_IG(epochs=200):
             loss_adv = net.get_losses(inputs_adv, labels, criterion, **kwargs)  # adversarial loss
             train_rob_losses.append(loss_adv.item())
 
-            loss_gap = (loss_adv - loss1).item()
-
             total += labels.size(0)
 
 
