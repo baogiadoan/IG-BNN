@@ -3,12 +3,19 @@ This is released source code for the paper
 [Bayesian Learning with Information Gain Provably Bounds Risk for a Robust Adversarial Defense](https://proceedings.mlr.press/v162/doan22a.html)
 
 >@inproceedings{doan2022bayesian,
+>
 >  title={Bayesian Learning with Information Gain Provably Bounds Risk for a Robust Adversarial Defense},
+>
 >  author={Doan, Bao Gia and Abbasnejad, Ehsan M and Shi, Javen Qinfeng and Ranasinghe, Damith C},
+>
 >  booktitle={International Conference on Machine Learning},
+>
 >  pages={5309--5323},
+>
 >  year={2022},
+>
 >  organization={PMLR}
+>
 >}
 
 
