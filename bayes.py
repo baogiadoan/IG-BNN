@@ -100,10 +100,9 @@ class BayesWrap(nn.Module):
                         # if p is not p2:
                         dists.append(d.cpu().item())
                         kij = torch.exp(-(d**2) / self.h_kernel**2 / 2)
-                        new_parameters[i][l] = (
-                            ((new_parameters[i][l] + p2.grad.data) -
-                             (d / self.h_kernel**2) * alpha) /
-                            float(len(all_pgs))) * kij
+                        new_parameters[i][l] += kij * (p2.grad.data + (alpha / self.h_kernel**2) * d)
+                        new_parameters[i][l] /= float(len(all_pgs))
+
         self.h_kernel = np.median(dists)
         self.h_kernel = np.sqrt(0.5 * self.h_kernel / np.log(len(all_pgs)) + 1)
         for i in range(len(all_pgs)):
